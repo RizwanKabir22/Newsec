@@ -196,13 +196,13 @@ button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2
 .apill__fill { position: absolute; right: 8px; top: 8px; width: 32px; height: 32px; border-radius: 50%; background: #161C3B; z-index: -1; transition: transform .6s cubic-bezier(.7, 0, .2, 1); }
 .apill__label { position: relative; }
 .apill__disc { position: relative; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #161C3B; color: #fff; transition: background .45s cubic-bezier(.7, 0, .2, 1) .12s, color .45s .12s; }
-.apill__out, .apill__in { position: absolute; display: flex; transition: transform .5s cubic-bezier(.7, 0, .2, 1); }
+.apill__out, .apill__in { position: absolute; display: flex; transform: rotate(-45deg); transition: transform .5s cubic-bezier(.7, 0, .2, 1); }
 .apill__in { transform: translate(-18px, 18px) rotate(-45deg); transition-delay: .08s; }
 .apill:hover { color: #fff; transition-delay: .12s, 0s; box-shadow: 0 0 0 1px rgba(255, 255, 255, .9), 0 16px 34px -12px rgba(79, 108, 245, .65); }
 .apill:hover .apill__fill { transform: scale(14); }
 .apill:hover .apill__disc { background: #fff; color: #161C3B; }
 .apill:hover .apill__out { transform: translate(18px, -18px) rotate(-45deg); }
-.apill:hover .apill__in { transform: none; }
+.apill:hover .apill__in { transform: rotate(-45deg); }
 .gpill {
   position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px 0 18px; border: 0; border-radius: 999px; cursor: pointer;
   color: #fff; font: 500 15px/1 Urbanist, system-ui, sans-serif; white-space: nowrap; background: rgba(255, 255, 255, .12); backdrop-filter: blur(18px) saturate(160%);
