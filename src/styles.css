@@ -177,6 +177,8 @@ button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2
      max() keeps the image reaching the bottom once the card is narrower than ~725px (0.69 × width < 500px) */
   background: #161C3B url(./assets/hero-tower-2.jpg) 100% 52% / max(138%, 1000px) auto no-repeat;
 }
+/* lighter than the original fade: enough to seat the greeting, the photo stays bright */
+.hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(22, 28, 59, .62) 0%, rgba(22, 28, 59, .46) 34%, rgba(22, 28, 59, .16) 60%, rgba(22, 28, 59, .04) 100%); }
 .hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) clamp(400px, 36vw, 480px); gap: 24px; height: 100%; padding: 12px 12px 12px 56px; box-sizing: border-box; }
 .hero__copy { padding: 44px 0; color: #fff; display: flex; flex-direction: column; min-width: 0; }
 .hero__date { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255, 255, 255, .7); }

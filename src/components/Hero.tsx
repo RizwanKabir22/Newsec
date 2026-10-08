@@ -10,6 +10,7 @@ export const Hero = memo(function Hero({ open, gateBlocked }: { open: number; ga
   const { t } = useI18n();
   return (
     <section data-hero="" className="hero">
+      <div className="hero__shade" />
       <div className="hero__inner">
         <div data-stagger="" className="hero__copy">
           <div className="hero__date">{t('Wednesday 7 October · Week 41')}</div>
