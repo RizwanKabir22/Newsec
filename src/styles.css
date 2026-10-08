@@ -132,10 +132,8 @@ button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2
 /* ---------- header ---------- */
 .hdr { display: grid; grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr); align-items: center; gap: 16px; height: 56px; }
 .hdr__brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.hdr__brand img { height: 26px; }
-:root[data-dash-theme="dark"] .hdr__brand img { filter: brightness(0) invert(1); }
-.hdr__sep { width: 1px; height: 22px; background: var(--t, rgba(22, 28, 59, .16)); }
-.hdr__product { font-size: 15px; color: var(--mu, rgba(22, 28, 59, .74)); white-space: nowrap; }
+.hdr__logo { display: block; height: 36px; width: auto; flex: none; color: #171D39; }
+:root[data-dash-theme="dark"] .hdr__logo { color: #fff; }
 .ctl { background: var(--card, rgba(255, 255, 255, .78)); box-shadow: var(--ctlSh, inset 0 0 0 1px rgba(255, 255, 255, .7), 0 4px 12px rgba(22, 28, 59, .06)); }
 .search { width: 560px; display: flex; align-items: center; gap: 12px; height: 52px; padding: 0 8px 0 18px; box-sizing: border-box; border-radius: 999px; transition: box-shadow .3s; }
 .search:hover, .search:focus-within { box-shadow: var(--ctlShH, inset 0 0 0 1px #fff, 0 10px 28px rgba(22, 28, 59, .10)); }

@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import logo from '../assets/newsec-logo.png';
 import avatar from '../assets/avatar-4.jpg';
 import { useI18n, type Lang } from '../i18n';
 import { Icon } from './Icon';
+import { Logo } from './Logo';
 
 interface Props { dark: boolean; onToggleTheme: () => void; lang: Lang; onLang: (lang: Lang) => void }
 
@@ -11,9 +11,7 @@ export const Header = memo(function Header({ dark, onToggleTheme, lang, onLang }
   return (
     <header data-hdr="" className="hdr">
       <div className="hdr__brand">
-        <img src={logo} alt="Newsec" />
-        <span className="hdr__sep" />
-        <span className="hdr__product">{t('Project Hub')}</span>
+        <Logo />
       </div>
       <label className="search ctl">
         <Icon name="Search" size={18} />
