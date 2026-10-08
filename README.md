@@ -24,8 +24,8 @@ npm run build:single # also writes dist/project-hub.html, one self-contained fil
 
 ## Deploy
 
-Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`).
-In the repository settings, **Pages → Source** must be set to **GitHub Actions** (one-time).
+Every push to `main` builds the site and publishes it (`.github/workflows/deploy.yml`).
+The workflow publishes `dist/` to the `gh-pages` branch, which GitHub Pages serves (Settings → Pages → Source: *Deploy from a branch* → `gh-pages` / root).
 
 ## Structure
 
