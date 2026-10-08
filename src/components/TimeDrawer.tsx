@@ -203,8 +203,6 @@ export const TimeDrawer = memo(function TimeDrawer({ week, dispatch, generated, 
                   {generating && step >= LOG_LINES - 1 && shown < N && Array.from({ length: Math.min(2, N - shown) }, (_, k) => (
                     <div key={'sk' + k} className="tde tde--sk" aria-hidden="true"><span /><span /><span /></div>
                   ))}
-                </div>
-
                 {sum.drafted > 0 && (
                   <footer className="tdd__foot">
                     <span>
@@ -218,7 +216,8 @@ export const TimeDrawer = memo(function TimeDrawer({ week, dispatch, generated, 
                       </button>
                     )}
                   </footer>
-                )}
+                  )}
+                </div>
               </>
             )}
           </section>
@@ -230,10 +229,13 @@ export const TimeDrawer = memo(function TimeDrawer({ week, dispatch, generated, 
           ) : (
             <>
               <div className="td__foot-l">
-                <div><b>{hrs(total)}</b> {t('logged')}{awaiting > 0 && <> · <b>{hrs(awaiting)}</b> {t('awaiting you')}</>}</div>
-                <div className="td__hint">{open.length ? t('Confirm {days} to submit', { days: open.map(dayName).join(lang === 'da' ? ' og ' : ' and ') }) : t('All days confirmed')}</div>
+                <div className="td__foot-t">{t('Week 41')} · <b>{hrs(total)}</b> {t('logged')}{awaiting > 0 && <> · <b>{hrs(awaiting)}</b> {t('awaiting you')}</>}</div>
+                <div className="td__hint">
+                  <span className="td__pips">{[0, 1, 2].map(d => <i key={d} className={week.confirmed[d] ? 'on' : ''} />)}</span>
+                  {open.length ? t('{a} of {b} days confirmed', { a: 3 - open.length, b: 3 }) : t('All days confirmed')}
+                </div>
               </div>
-              <button className="drawer__approve" disabled={open.length > 0} onClick={() => dispatch({ type: 'submitWeek' })}>{t('Submit week')}</button>
+              <button className="td__submit" disabled={open.length > 0} onClick={() => dispatch({ type: 'submitWeek' })}><Icon name="ArrowUpRight" size={14} />{t('Submit week')}</button>
             </>
           )}
         </div>

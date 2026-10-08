@@ -734,25 +734,29 @@ button:focus-visible, [tabindex]:focus-visible, input:focus-visible { outline: 2
 .tw__caret { display: inline-block; width: 2px; height: 1em; margin-left: 1px; vertical-align: -2px; border-radius: 1px; background: var(--td-ai); animation: caret 1s steps(1) infinite; }
 @keyframes caret { 50% { opacity: 0; } }
 
-/* day summary bar sticks to the bottom of the list */
+/* day summary: last row of the day's card */
 .tdd__foot {
-  position: sticky; bottom: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 -28px -20px; padding: 14px 28px 16px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 12px 12px 66px;
+  border-top: 1px solid var(--td-line); background: rgba(255, 255, 255, .03);
   font-size: 13px; color: var(--td-soft); font-variant-numeric: tabular-nums;
-  background: linear-gradient(180deg, rgba(25, 31, 64, 0) 0%, rgba(25, 31, 64, .96) 30%);
 }
-:root[data-dash-theme="dark"] .tdd__foot { background: linear-gradient(180deg, rgba(31, 38, 77, 0) 0%, rgba(31, 38, 77, .97) 30%); }
 .tdd__foot b { color: #fff; font-weight: 600; }
-.tdd__confirm { display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; cursor: pointer; background: #fff; color: #161C3B; font: 600 13px Urbanist, system-ui, sans-serif; white-space: nowrap; box-shadow: 0 6px 16px rgba(0, 0, 0, .25); transition: opacity .2s; }
+.tdd__confirm { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border: 0; border-radius: 999px; cursor: pointer; background: #fff; color: #161C3B; font: 600 13px Urbanist, system-ui, sans-serif; white-space: nowrap; box-shadow: 0 4px 12px rgba(0, 0, 0, .2); transition: opacity .2s, transform .2s; }
 .tdd__confirm:disabled { opacity: .4; cursor: default; }
-.tdd__reopen { border: 0; background: none; padding: 4px 8px; border-radius: 999px; cursor: pointer; color: rgba(255, 255, 255, .7); font: 500 13px Urbanist, system-ui, sans-serif; }
+.tdd__reopen { border: 0; background: none; padding: 4px 10px; border-radius: 999px; cursor: pointer; color: rgba(255, 255, 255, .7); font: 500 13px Urbanist, system-ui, sans-serif; }
 .tdd__reopen:hover { color: #fff; background: rgba(255, 255, 255, .08); }
 
 /* week footer */
-.td__foot { justify-content: space-between; gap: 16px; }
-.td__foot-l { min-width: 0; font-size: 14px; color: rgba(255, 255, 255, .7); font-variant-numeric: tabular-nums; }
-.td__foot-l b { color: #fff; font-weight: 600; }
-.td__hint { font-size: 12px; color: rgba(255, 255, 255, .5); margin-top: 2px; }
-.td .drawer__approve:disabled { opacity: .4; cursor: default; }
+.td__foot { justify-content: space-between; align-items: center; gap: 16px; padding: 16px 24px 20px 28px; background: rgba(255, 255, 255, .02); }
+.td__foot-l { min-width: 0; display: flex; flex-direction: column; gap: 5px; font-variant-numeric: tabular-nums; }
+.td__foot-t { font-size: 14px; color: rgba(255, 255, 255, .7); white-space: nowrap; }
+.td__foot-t b { color: #fff; font-weight: 600; }
+.td__hint { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255, 255, 255, .5); }
+.td__pips { display: inline-flex; gap: 3px; }
+.td__pips i { width: 14px; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, .16); transition: background .3s; }
+.td__pips i.on { background: #96CCC2; }
+.td__submit { display: inline-flex; align-items: center; gap: 7px; height: 42px; padding: 0 20px; border: 0; border-radius: 999px; cursor: pointer; flex: none; background: #fff; color: #161C3B; font: 600 14px Urbanist, system-ui, sans-serif; white-space: nowrap; box-shadow: 0 8px 20px rgba(0, 0, 0, .25); transition: background .3s, color .3s, box-shadow .3s; }
+.td__submit:disabled { cursor: default; background: transparent; color: rgba(255, 255, 255, .5); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16); }
 .td__done { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: #B5E0D8; }
 .td__done span { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: rgba(150, 204, 194, .2); animation: pop .4s cubic-bezier(.34, 1.56, .64, 1); }
 @media (prefers-reduced-motion: reduce) {

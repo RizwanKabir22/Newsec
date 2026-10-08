@@ -257,6 +257,7 @@ const DA: Record<string, string> = {
   'logged': 'registreret',
   'awaiting you': 'venter på dig',
   'Confirm {days} to submit': 'Bekræft {days} for at indsende',
+  '{a} of {b} days confirmed': '{a} af {b} dage bekræftet',
   'All days confirmed': 'Alle dage er bekræftet',
   'Submit week': 'Indsend uge',
   'Project': 'Projekt',
